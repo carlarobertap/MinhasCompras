@@ -1,4 +1,6 @@
-﻿using SQLite;
+﻿using System.Globalization;
+using SQLite;
+
 
 namespace MinhasCompras.Models
 {
@@ -39,13 +41,15 @@ namespace MinhasCompras.Models
             get => _preco;
             set
             {
-                if (value <= 0)
-                    throw new Exception("Por favor, preencha preço com um número maior que zero");
+                if (value == 0)
+                    throw new Exception("Por favor, preencha o preço com um valor maior que zero");
 
                 _preco = value;
             }
         }
 
         public double Total { get => Quantidade * Preco; }
+
+        public string Categoria { get; set; }   
     }
 }

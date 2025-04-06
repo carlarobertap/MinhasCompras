@@ -1,4 +1,5 @@
-﻿using MinhasCompras.Helpers;
+﻿using System.Globalization;
+using MinhasCompras.Helpers;
 
 namespace MinhasCompras
 {
@@ -26,8 +27,7 @@ namespace MinhasCompras
         {
             InitializeComponent();
 
-
-            //return new Window(new AppShell());
+            Thread.CurrentThread.CurrentCulture = new CultureInfo("pt-BR");
 
             MainPage = new NavigationPage(new Views.ListaProduto());
 
